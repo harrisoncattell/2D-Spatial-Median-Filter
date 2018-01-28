@@ -7,7 +7,7 @@ function [image] =  median_filter(r_image, kernel_size)
 % -----------
 %
 %   Images MUST be in greyscale before calling this function
-%   Kernal size MUST be a positive number about 0
+%   Kernal size MUST be a positive number above 0
 %
 % Description
 % -----------
