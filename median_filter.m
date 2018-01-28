@@ -1,16 +1,17 @@
-function [image] =  medium_filter(r_image, kernel_size)
+function [image] =  median_filter(r_image, kernel_size)
 
-% ------- 2D Spatial Medium Filter -------
+% ------- 2D Spatial Median Filter -------
 % Created by Harrison Cattell, 2017
 %
 % IMPORTANT NOTICE
 % -----------
 %
 %   Images MUST be in greyscale before calling this function
+%   Kernal size MUST be a positive number about 0
 %
 % Description
 % -----------
-%   Self-made implementation of a 2D spatial medium filter
+%   Self-made implementation of a 2D spatial median filter
 %    
 %   input parameters are: 
 %   Image
@@ -19,7 +20,6 @@ function [image] =  medium_filter(r_image, kernel_size)
 %   Neighbourhood size (Kernel)
 %           The size of the neighbourhood that the filter will be applied
 %           to
-%           Must be a negative number!
 %
 % -------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ else
             % sorting vector
             sorted_vec = sort(sub_vector);
 
-            % Identifying medium value
+            % Identifying median value
             mid_val = sorted_vec(mid_point);
 
             padded_array(row, col) = mid_val;
@@ -70,7 +70,7 @@ else
     
     image = padded_array;
     
-    disp('Medium Filter Complete!');
+    disp('Median Filter Complete!');
     
 end
 
